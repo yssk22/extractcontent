@@ -1,6 +1,6 @@
 {
    "name" : "extractcontent"
-,  "version" : "0.1.0"
+,  "version" : "0.1.1"
 ,  "description" : "Utility for extracting title and main contents from an HTML text."
 ,  "tags" : ["text-analysis", "node", "utility"]
 ,  "author" : "Yohei Sasaki <yssk22@gmail.com>"
