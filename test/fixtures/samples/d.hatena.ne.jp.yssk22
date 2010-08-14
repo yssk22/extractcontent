@@ -1,0 +1,861 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-jp">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<title>Web屋の人の日記 || WebJourney 開発ログ</title>
+<link rel="start" href="./" title="Web屋の人の日記 || WebJourney 開発ログ">
+<link rel="help" href="/help" title="ヘルプ">
+<link rel="prev" href="/yssk22/?of=5" title="前の5日分">
+
+<link rel="stylesheet" href="http://d.st-hatena.com/statics/css/base.css?e467e1bb30f733504d0cf80b95ab397e905752bc" type="text/css" media="all">
+<link rel="stylesheet" href="http://d.st-hatena.com/statics/css/headerstyle_lb.css?af31cbcaf89b9f0b4cd23068c827c3ad77d3b3e8" type="text/css" media="all">
+<link rel="stylesheet" href="http://d.st-hatena.com/statics/theme/hatena-darkgray/hatena-darkgray.css?81cee21c22a252feec7cec6385bd86fd0b2fbfc0" type="text/css" media="all">
+
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://d.hatena.ne.jp/yssk22/rss">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://d.hatena.ne.jp/yssk22/rss2">
+
+<link rel="meta" type="application/rdf+xml" title="FOAF" href="http://d.hatena.ne.jp/yssk22/foaf" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://d.hatena.ne.jp/yssk22/opensearch/diary.xml" title="Web屋の人の日記 || WebJourney 開発ログ内日記検索" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://d.hatena.ne.jp/yssk22/opensearch/archive.xml" title="Web屋の人の日記 || WebJourney 開発ログ内一覧検索" />
+
+
+
+<link rel="shortcut icon" href="http://d.hatena.ne.jp/images/lb_favicon.ico">
+
+
+
+
+<style type="text/css">
+<!-- 
+
+-->
+</style>
+
+
+
+<!--
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:foaf="http://xmlns.com/foaf/0.1/">
+<rdf:Description rdf:about="http://d.hatena.ne.jp/yssk22/">
+   <foaf:maker rdf:parseType="Resource">
+     <foaf:holdsAccount>
+       <foaf:OnlineAccount foaf:accountName="yssk22">
+         <foaf:accountServiceHomepage rdf:resource="http://www.hatena.ne.jp/" />
+       </foaf:OnlineAccount>
+     </foaf:holdsAccount>
+   </foaf:maker>
+</rdf:Description>
+</rdf:RDF>
+-->
+
+<link rel="alternate" media="handheld" type="text/html" href="http://d.hatena.ne.jp/yssk22/mobile" />
+<!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://d.hatena.ne.jp/yssk22/20380120#1252062993"
+  trackback:ping="http://d.hatena.ne.jp/yssk22/20380120"
+  dc:title="[Project] CouchDBによるOpenSocial Container 実装"
+  dc:identifier="http://d.hatena.ne.jp/yssk22/20380120#1252062993" />
+</rdf:RDF>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://d.hatena.ne.jp/yssk22/20380120#1269900046"
+  trackback:ping="http://d.hatena.ne.jp/yssk22/20380120"
+  dc:title="[CouchDB] 最新版ChangeLog 私訳置き場"
+  dc:identifier="http://d.hatena.ne.jp/yssk22/20380120#1269900046" />
+</rdf:RDF>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://d.hatena.ne.jp/yssk22/20100731#1280602563"
+  trackback:ping="http://d.hatena.ne.jp/yssk22/20100731"
+  dc:title=" Varnish を CouchDB 用のReverse Proxyに活用する。"
+  dc:identifier="http://d.hatena.ne.jp/yssk22/20100731#1280602563" />
+</rdf:RDF>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://d.hatena.ne.jp/yssk22/20100524#1274715732"
+  trackback:ping="http://d.hatena.ne.jp/yssk22/20100524"
+  dc:title="[CouchDB][GAE] Futon が動きました。"
+  dc:identifier="http://d.hatena.ne.jp/yssk22/20100524#1274715732" />
+</rdf:RDF>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://d.hatena.ne.jp/yssk22/20100523#1274612280"
+  trackback:ping="http://d.hatena.ne.jp/yssk22/20100523"
+  dc:title="[CouchDB][GAE] CouchDB Compatible API Service on GAE"
+  dc:identifier="http://d.hatena.ne.jp/yssk22/20100523#1274612280" />
+</rdf:RDF>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://d.hatena.ne.jp/yssk22/20100522#1274548046"
+  trackback:ping="http://d.hatena.ne.jp/yssk22/20100522"
+  dc:title="[CouchDB] これはなんだ?"
+  dc:identifier="http://d.hatena.ne.jp/yssk22/20100522#1274548046" />
+</rdf:RDF>
+-->
+
+
+<link rel="microsummary" href="/microsummary/entry_title.xml">
+
+
+
+
+
+<script type="text/javascript" src="http://s.hatena.ne.jp/js/HatenaStar.js"></script>
+<script type="text/javascript">
+Hatena.Star.SiteConfig = {
+  entryNodes: {
+    'div.section': {
+      uri: 'h3 a',
+      title: 'h3',
+      container: 'h3'
+    }
+  }
+};
+Hatena.Author  = new Hatena.User('yssk22');
+Hatena.DiaryName  = new Hatena.User('yssk22');
+
+</script>
+
+
+
+
+
+<script type="text/javascript" src="http://d.st-hatena.com/statics/js/adcolor.js?af31cbcaf89b9f0b4cd23068c827c3ad77d3b3e8"></script>
+
+
+<script type="text/javascript" src="http://d.st-hatena.com/statics/js/quick_pager.js?af31cbcaf89b9f0b4cd23068c827c3ad77d3b3e8"></script>
+<script type="text/javascript" src="http://d.st-hatena.com/statics/js/diary_utils.js?af31cbcaf89b9f0b4cd23068c827c3ad77d3b3e8"></script>
+<script type="text/javascript" src="http://d.st-hatena.com/statics/js/max_width_fotolife.js?af31cbcaf89b9f0b4cd23068c827c3ad77d3b3e8"></script>
+<!--
+<
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+<div id="simple-header">
+
+  <a href="http://www.hatena.ne.jp/"><img src="/images/hatena-simple_lb.gif" alt="Hatena::" title="Hatena::" id="logo-hatena" width="65" height="17"></a><a href="/"><img src="/images/diary-simple_lb.gif" alt="Diary" title="Diary" id="logo-diary" width="43" height="17"></a>
+  <form method="get" action="/search" class="search-form">
+    <input type="text" class="search-word" name="word" value=""><input name="name" value="yssk22" type="hidden"><input type="submit" name="diary" value="日記" class="search-button"><input type="submit" name="submit" value="検索" class="search-button">
+  </form>
+  <ul class="menu">
+    <li><a href="/yssk22/">ブログトップ</a></li>
+    <li><a href="/yssk22/archive">記事一覧</a></li>
+
+
+    <li><a href="https://www.hatena.ne.jp/login?backurl=http%3A%2F%2Fd.hatena.ne.jp%2Fyssk22%2F&add_timestamp=1">ログイン</a></li>
+    <li><a href="https://www.hatena.ne.jp/register?location=http://d.hatena.ne.jp/">無料ブログ開設</a></li>
+
+  </ul>
+</div>
+
+
+
+<h1><a href="http://d.hatena.ne.jp/yssk22/">Web屋の人の日記 || WebJourney 開発ログ</a></h1>
+<div class="hatena-body">
+<div class="sidebar">
+  <div class="hatena-module hatena-module-profile">
+  <div class="hatena-moduletitle">プロフィール</div>
+  <div class="hatena-modulebody">
+    <div class="hatena-profile">
+      <p class="hatena-profile-id"><a href="/yssk22/about">yssk22</a></p>
+      <p class="hatena-profile-body">http://www.yssk22.info/</p>
+    </div>
+  </div>
+</div>
+
+  <div class="hatena-module hatena-module-calendar2">
+<div class="hatena-moduletitle">カレンダー</div>
+<div class="hatena-modulebody">
+<table class="calendar" summary="calendar">
+<tr>
+<td class="calendar-prev-month" colspan="2"><a href="/yssk22/201007" title="201007" rel="nofollow">&lt;&lt;</a></td>
+<td class="calendar-current-month" colspan="3"><a href="/yssk22/archive/201008" rel="nofollow">2010/08</a></td>
+<td class="calendar-next-month" colspan="2"><a href="/yssk22/201009" title="201009" rel="nofollow">&gt;&gt;</a></td>
+</tr>
+<tr>
+<td class="calendar-sunday">日</td>
+<td class="calendar-weekday">月</td>
+<td class="calendar-weekday">火</td>
+<td class="calendar-weekday">水</td>
+<td class="calendar-weekday">木</td>
+<td class="calendar-weekday">金</td>
+<td class="calendar-saturday">土</td>
+</tr>
+	<tr>
+		<td class="calendar-day">1</td>
+		<td class="calendar-day">2</td>
+		<td class="calendar-day">3</td>
+		<td class="calendar-day">4</td>
+		<td class="calendar-day">5</td>
+		<td class="calendar-day">6</td>
+		<td class="calendar-day">7</td>
+	</tr>
+	<tr>
+		<td class="calendar-day">8</td>
+		<td class="calendar-day">9</td>
+		<td class="calendar-day">10</td>
+		<td class="calendar-day">11</td>
+		<td class="calendar-day">12</td>
+		<td class="calendar-day">13</td>
+		<td class="calendar-day day-today">14</td>
+	</tr>
+	<tr>
+		<td class="calendar-day">15</td>
+		<td class="calendar-day">16</td>
+		<td class="calendar-day">17</td>
+		<td class="calendar-day">18</td>
+		<td class="calendar-day">19</td>
+		<td class="calendar-day">20</td>
+		<td class="calendar-day">21</td>
+	</tr>
+	<tr>
+		<td class="calendar-day">22</td>
+		<td class="calendar-day">23</td>
+		<td class="calendar-day">24</td>
+		<td class="calendar-day">25</td>
+		<td class="calendar-day">26</td>
+		<td class="calendar-day">27</td>
+		<td class="calendar-day">28</td>
+	</tr>
+	<tr>
+		<td class="calendar-day">29</td>
+		<td class="calendar-day">30</td>
+		<td class="calendar-day">31</td>
+		<td class="calendar-day"></td>
+		<td class="calendar-day"></td>
+		<td class="calendar-day"></td>
+		<td class="calendar-day"></td>
+	</tr>
+</table>
+	</div>
+</div>
+
+          <div class="hatena-module hatena-module-rss">
+                <div class="hatena-moduletitle"><a href="http://b.hatena.ne.jp/yssk22/">yssk22のブックマーク</a></div>
+                <div class="hatena-modulebody">
+                        <ul class="hatena-rss">
+                                <li><a href="http://kanemotilevel.com/add/kizi242.html" title="">サイトデザインを素敵にするアイコン集 - １８７７個のフリー素材をまとめてみた。</a></li>
+                                <li><a href="http://wiki.couchapp.org/page/authn-preview#/" title="security について詳しく。">Preview, please comment - CouchApp.org</a></li>
+                                <li><a href="http://horicky.blogspot.com/2010/08/mapreduce-to-recommend-people.html" title="mr でfriend listの計算">Pragmatic Programming Techniques: Map/Reduce to recommend people connection</a></li>
+                                <li><a href="http://d.hatena.ne.jp/mkouhei/20100802/1280677117" title="みんな気がついてくれ。ケータイの赤外線通信を代替できるということをww Android to Android でHTTPでレプリカできまっせ。">CouchDB for Androidキタコレ。 - ペンギンと愉快な機械の日々</a></li>
+                                <li><a href="http://upstre.am/2010/07/30/transactions-in-couchdb/" title="">Transactions in CouchDB | upstream agile - software</a></li>
+                        </ul>
+                </div>
+        </div>
+
+  <div class="hatena-module hatena-module-section">
+<div class="hatena-moduletitle"><a href="/yssk22/archive">最新タイトル</a></div>
+<div class="hatena-modulebody">
+<ul class="hatena-section">
+<li><a href="http://d.hatena.ne.jp/yssk22/20380120#1252062993">[Project] CouchDBによるOpenSocial Container 実装</a></li>
+<li><a href="http://d.hatena.ne.jp/yssk22/20380120#1269900046">[CouchDB] 最新版ChangeLog 私訳置き場</a></li>
+<li><a href="http://d.hatena.ne.jp/yssk22/20100731#1280602563"> Varnish を CouchDB 用のReverse Proxyに活用する。</a></li>
+<li><a href="http://d.hatena.ne.jp/yssk22/20100524#1274715732">[CouchDB][GAE] Futon が動きました。</a></li>
+<li><a href="http://d.hatena.ne.jp/yssk22/20100523#1274612280">[CouchDB][GAE] CouchDB Compatible API Service on GAE</a></li>
+<li><a href="http://d.hatena.ne.jp/yssk22/20100522#1274548046">[CouchDB] これはなんだ?</a></li>
+<li><a href="http://d.hatena.ne.jp/yssk22/20100506#1273150569">[CouchDB] たまにはCouchDBの話。TV CM</a></li>
+<li><a href="http://d.hatena.ne.jp/yssk22/20100504#1272992972">[Python][misc] twitter.com をログストレージにする、の続きの続き</a></li>
+<li><a href="http://d.hatena.ne.jp/yssk22/20100503#1272857859">[Python][misc] twitter.com をログストレージにする、の続き</a></li>
+<li><a href="http://d.hatena.ne.jp/yssk22/20100429#1272528863">[Python][misc] もうめんどくさいからtwitter.comをログストレージに使うことにした</a></li>
+</ul>
+</div>
+</div>
+
+  <div class="hatena-module hatena-module-comment">
+<div class="hatena-moduletitle">最近のコメント</div>
+<div class="hatena-modulebody">
+<ul class="hatena-recentcomment">
+<li><a href="/yssk22/20100306#c">2010-03-06</a>&nbsp;mkouhei</li>
+<li><a href="/yssk22/20100209#c">2010-02-09</a>&nbsp;yssk22</li>
+<li><a href="/yssk22/20100209#c">2010-02-09</a>&nbsp;z-ohnami</li>
+<li><a href="/yssk22/20100205#c">2010-02-05</a>&nbsp;yssk22</li>
+<li><a href="/yssk22/20100205#c">2010-02-05</a>&nbsp;mkouhei</li>
+</ul>
+</div>
+</div>
+
+</div>
+<!-- -->
+<div class="main">
+<p style="margin-left:10px">id:yssk22 が記述するすべてのコンテンツは個人の意見であり、勤務先の組織とは一切無関係のものです。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="calendar" id="pager-top">
+  <a rel="prev" href="/yssk22/?of=5" class="prev">&lt;前の5日分</a>&nbsp;<span id="edit-in-place-add"></span>
+</div>
+<div id="days">
+
+<div class="day">
+<h2><a href="http://d.hatena.ne.jp/yssk22/20380120"><span class="date">2038-01-20</span></a> <span class="title">お知らせ</span></h2>
+
+<div class="body">
+
+<!-- google_ad_section_start -->
+
+		<div class="section">
+			<h3 class="title"><a href="/yssk22/20380120#1252062993" name="1252062993"> CouchDBによるOpenSocial Container 実装</a></h3>			<p class="sectionheader"><span class="sectioncategory"><a href="/yssk22/searchdiary?word=%2A%5BProject%5D" class="sectioncategory">Project</a></span> |  <span class="timestamp">20:16</span> |  <a href="http://b.hatena.ne.jp/entry/http://d.hatena.ne.jp/yssk22/20380120%231252062993" class="bookmark-icon"><img src="http://d.hatena.ne.jp/images/b_entry_lb.gif" border="0" title=" CouchDBによるOpenSocial Container 実装 - Web屋の人の日記 || WebJourney 開発ログ を含むブックマーク" alt=" CouchDBによるOpenSocial Container 実装 - Web屋の人の日記 || WebJourney 開発ログ を含むブックマーク" width="16" height="12" class="icon"></a> <a href="http://b.hatena.ne.jp/entry/http://d.hatena.ne.jp/yssk22/20380120%231252062993" class="bookmark-count"><img src="http://b.hatena.ne.jp/entry/image/http://d.hatena.ne.jp/yssk22/20380120%231252062993" title="はてなブックマーク -  CouchDBによるOpenSocial Container 実装 - Web屋の人の日記 || WebJourney 開発ログ " alt=""></a></p>
+
+			<p class="seemore"><a href="/yssk22/20380120#1252062993">続きを読む</a></p>
+
+		</div>
+
+		<div class="section">
+			<h3 class="title"><a href="/yssk22/20380120#1269900046" name="1269900046"> 最新版ChangeLog 私訳置き場</a></h3>			<p class="sectionheader"><span class="sectioncategory"><a href="/yssk22/searchdiary?word=%2A%5BCouchDB%5D" class="sectioncategory">CouchDB</a></span> |  <span class="timestamp">07:00</span> |  <a href="http://b.hatena.ne.jp/entry/http://d.hatena.ne.jp/yssk22/20380120%231269900046" class="bookmark-icon"><img src="http://d.hatena.ne.jp/images/b_entry_lb.gif" border="0" title=" 最新版ChangeLog 私訳置き場 - Web屋の人の日記 || WebJourney 開発ログ を含むブックマーク" alt=" 最新版ChangeLog 私訳置き場 - Web屋の人の日記 || WebJourney 開発ログ を含むブックマーク" width="16" height="12" class="icon"></a> <a href="http://b.hatena.ne.jp/entry/http://d.hatena.ne.jp/yssk22/20380120%231269900046" class="bookmark-count"><img src="http://b.hatena.ne.jp/entry/image/http://d.hatena.ne.jp/yssk22/20380120%231269900046" title="はてなブックマーク -  最新版ChangeLog 私訳置き場 - Web屋の人の日記 || WebJourney 開発ログ " alt=""></a></p>
+			<p>正式版 1.0 へ向けての機能<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%D5%A5%EA%A1%BC%A5%BA">フリーズ</a>バージョン 0.11 が公開されています。 </p>
+			<p class="seemore"><a href="/yssk22/20380120#1269900046">続きを読む</a></p>
+
+		</div>
+
+<!-- google_ad_section_end -->
+
+</div>
+
+
+
+  <div class="comment">
+    <div class="caption">
+      <a name="c" href="/yssk22/comment?date=20380120#c">コメントを書く</a>
+      
+    </div>
+
+    
+  <div class="commentshort">
+    
+      <p>
+                <a name="c109997776"></a><span class="commentator">
+          <a href="/mkouhei/" class="hatena-id-icon"><img src="http://www.hatena.ne.jp/users/mk/mkouhei/profile_s.gif" class="hatena-id-icon" alt="mkouhei" title="mkouhei" height="16" width="16">mkouhei</a>
+          
+        </span>
+        <span class="timestamp"><a name="c1255713201" href="/yssk22/20380120#c1255713201">2009/10/17 02:13</a></span>
+        <span class="commentbody">2038-01-20って何ですか〜。(わら</span>
+
+      </p>
+    
+      <p>
+                <a name="c109997845"></a><span class="commentator">
+          <a href="/yssk22/" class="hatena-id-icon"><img src="http://www.hatena.ne.jp/users/ys/yssk22/profile_s.gif" class="hatena-id-icon" alt="yssk22" title="yssk22" height="16" width="16">yssk22</a>
+          
+        </span>
+        <span class="timestamp"><a name="c1255714271" href="/yssk22/20380120#c1255714271">2009/10/17 02:31</a></span>
+        <span class="commentbody">長生きはしたいもんですw</span>
+
+      </p>
+    
+  </div>
+
+
+
+    
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<div class="day">
+<h2><a href="http://d.hatena.ne.jp/yssk22/20100731"><span class="date">2010-07-31</span></a></h2>
+
+<div class="body">
+
+<!-- google_ad_section_start -->
+
+		<div class="section">
+			<h3 class="title"><a href="/yssk22/20100731#1280602563" name="1280602563"> Varnish を CouchDB 用のReverse Proxyに活用する。</a></h3>			<p class="sectionheader"> <span class="timestamp">03:56</span> |  <a href="http://b.hatena.ne.jp/entry/http://d.hatena.ne.jp/yssk22/20100731%231280602563" class="bookmark-icon"><img src="http://d.hatena.ne.jp/images/b_entry_lb.gif" border="0" title=" Varnish を CouchDB 用のReverse Proxyに活用する。 - Web屋の人の日記 || WebJourney 開発ログ を含むブックマーク" alt=" Varnish を CouchDB 用のReverse Proxyに活用する。 - Web屋の人の日記 || WebJourney 開発ログ を含むブックマーク" width="16" height="12" class="icon"></a> <a href="http://b.hatena.ne.jp/entry/http://d.hatena.ne.jp/yssk22/20100731%231280602563" class="bookmark-count"><img src="http://b.hatena.ne.jp/entry/image/http://d.hatena.ne.jp/yssk22/20100731%231280602563" title="はてなブックマーク -  Varnish を CouchDB 用のReverse Proxyに活用する。 - Web屋の人の日記 || WebJourney 開発ログ " alt=""></a></p>
+			<p>ご無沙汰しております、生きています。</p>
+			<p>さて、CouchDB 1.0 がでて、incremental replication もだいぶ安定した感があるので、自宅の CouchDB でロードバランスしたくなりました。</p>
+			<p>Apache mod_proxy_balancer という手もあるのですが、Incremental (MapReduce + Replication) という環境では、High Performance な Caching Proxy になる Varnish という選択肢もおもしろそうなので試しています。</p>
+			<h4> 構成</h4>
+			<ul>
+				<li> CPU: Opteron Dual Core 1.8 GHz</li>
+				<li> Memory: 8GB</li>
+				<li> Servers: <a href="http://relax:5984/," target="_blank">http://relax:5984/,</a> slave: <a href="http://relax:15984/" target="_blank">http://relax:15984/</a> (master と slave は同じサーバー上。ただし、ディスクは別)</li>
+			</ul>
+			<p>で twitter の<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%BF%A5%A4%A5%E0%A5%E9%A5%A4%A5%F3">タイムライン</a>を<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%D0%A5%C3%A5%AF%A5%A2%A5%C3%A5%D7">バックアップ</a>している <a href="http://www.yssk22.info/relax/_design/mytweets/_list/timeline/by_date?descending=true" target="_blank">http://www.yssk22.info/relax/_design/mytweets/_list/timeline/by_date?descending=true</a> のデータを対象にします。1つのドキュメントは 1.5KB ぐらいです。</p>
+			<h4> CouchDB の設定</h4>
+			<p>init.d の起動スクリプトに Incremental Replication を仕込んでおきます。これ忘れると、うっかり再起動したときに<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%EC%A5%D7%A5%EA%A5%B1%A1%BC%A5%B7%A5%E7%A5%F3">レプリケーション</a>が止まっている、とかそういう感じになるので注意。</p>
+<pre class="syntax-highlight">
+<span class="synComment">#!/bin/sh</span>
+
+/opt/relax/master/couchdb/pro<span class="synConstant">-1</span>.<span class="synConstant">0</span>.<span class="synConstant">0</span>/etc/init.d/couchdb <span class="synPreProc">$@</span>
+/opt/relax/slave/couchdb/pro<span class="synConstant">-1</span>.<span class="synConstant">0</span>.<span class="synConstant">0</span>/etc/init.d/couchdb <span class="synPreProc">$@</span>
+
+start_replication <span class="synStatement">()</span> <span class="synSpecial">{</span>
+      <span class="synStatement">sleep</span> <span class="synConstant">1</span> <span class="synComment"> # wait for slave waking up</span>
+      curl -X POST --data <span class="synStatement">'</span><span class="synConstant">{&quot;source&quot;: &quot;http://127.0.0.1:5984/relax&quot;, &quot;target&quot;: &quot;http://127.0.0.1:15984/relax&quot;, &quot;continuous&quot; : true }</span><span class="synStatement">'</span> http://localhost:<span class="synConstant">5984</span>/_replicate
+<span class="synSpecial">}</span> 
+
+<span class="synStatement">case</span> <span class="synStatement">&quot;</span><span class="synPreProc">$1</span><span class="synStatement">&quot;</span> <span class="synStatement">in</span>
+   start<span class="synStatement">)</span>
+      start_replication
+      <span class="synStatement">;;</span>
+   restart<span class="synStatement">)</span>
+      start_replication
+      <span class="synStatement">;;</span>
+   *<span class="synStatement">)</span>
+      <span class="synStatement">;;</span>
+<span class="synStatement">esac</span>
+</pre>
+
+			<h4> Varnish の設定</h4>
+			<p>初心者なので、 vcl にこんな感じで とりあえず GETとHEAD をロードバランスしてくれればいいや、と。</p>
+			<p>まずは、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%B8%FA%B2%CC%C2%AC%C4%EA">効果測定</a>のために、Varnish <a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%AD%A5%E3%A5%C3%A5%B7%A5%E5">キャッシュ</a>を無効にしておきました。</p>
+<pre>
+backend default {
+.host = &quot;127.0.0.1&quot;;
+.port = &quot;5984&quot;;
+}
+
+backend slave {
+.host = &quot;127.0.0.1&quot;;
+.port = &quot;15984&quot;;
+}
+
+director couchdb round-robin {
+   { .backend = default; }
+   { .backend = slave; }
+}
+
+sub vcl_recv {
+    if (req.request != &quot;GET&quot; &amp;&amp; req.request != &quot;HEAD&quot;) {
+        return (pass);
+    }
+    set req.backend = couchdb;
+    return (pass);
+}
+</pre>
+
+			<h4> ab してみる</h4>
+			<p><a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%AF%A5%E9%A5%A4%A5%A2%A5%F3%A5%C8">クライアント</a>には iMac (Core2Duo 3.02GHz, 4GB Memory) を使います。</p>
+			<p>まずは、直接CouchDBにある 1 tweet を直接たたく感じで。</p>
+<pre>
+$ ab -n 1000 -c 30 &quot;http://relax:5984/relax/fffdcaf2b6bafa2f6a39a513d48d5e45&quot;
+
+Concurrency Level:      30
+Time taken for tests:   2.431 seconds
+Complete requests:      1000
+Failed requests:        0
+Write errors:           0
+Total transferred:      1687000 bytes
+HTML transferred:       1452000 bytes
+Requests per second:    411.42 &#91;#/sec] (mean)
+Time per request:       72.918 &#91;ms] (mean)
+Time per request:       2.431 &#91;ms] (mean, across all concurrent requests)
+Transfer rate:          677.80 &#91;Kbytes/sec] received
+</pre>
+
+			<ul>
+				<li>c 30 が正しいかはともかく(もうちょっと多くてもいいかな...)、こんな感じです。</li>
+			</ul>
+			<p>Varnish 経由でたたいてみます。</p>
+<pre>
+$ ab -n 1000 -c 30 &quot;http://relax:6081/relax/fffdcaf2b6bafa2f6a39a513d48d5e45&quot;
+
+Concurrency Level:      30
+Time taken for tests:   1.671 seconds
+Complete requests:      1000
+Failed requests:        7
+   (Connect: 0, Receive: 0, Length: 7, Exceptions: 0)
+Write errors:           0
+Non-2xx responses:      7
+Total transferred:      1747622 bytes
+HTML transferred:       1445098 bytes
+Requests per second:    598.52 &#91;#/sec] (mean)
+Time per request:       50.123 &#91;ms] (mean)
+Time per request:       1.671 &#91;ms] (mean, across all concurrent requests)
+Transfer rate:          1021.48 &#91;Kbytes/sec] received
+</pre>
+
+			<p>ちょっと効果がでたようです。beam.smp 自体は concurrent に動いてはいるんですけどね。いろんな作用のせいで(ちょっと詳しく見る必要ありそう)、単体時が 500 rec/sec, RB時が 600 rec/sec ぐらいになっていました。</p>
+			<h4> ab してみる (2)</h4>
+			<p>次に MapReduce View。これは更新しながらはからないと余り意味がないのですが、とりあえず、tweetを日付順に並び替えて、10件とる<a href="http://www.yssk22.info/relax/_design/mytweets/_view/by_date?limit=10&descending=true" target="_blank">URI</a>をたたきまくります。</p>
+			<p>CouchDB 直接。</p>
+<pre>
+$ ab -n 1000 -c 30 &quot;http://relax:5984/relax/_design/mytweets/_view/by_date?limit=10&amp;descending=true&quot;
+
+Concurrency Level:      30
+Time taken for tests:   13.289 seconds
+Complete requests:      1000
+Failed requests:        0
+Write errors:           0
+Total transferred:      27286000 bytes
+HTML transferred:       27082000 bytes
+Requests per second:    75.25 &#91;#/sec] (mean)
+Time per request:       398.667 &#91;ms] (mean)
+Time per request:       13.289 &#91;ms] (mean, across all concurrent requests)
+Transfer rate:          2005.17 &#91;Kbytes/sec] received
+</pre>
+
+			<p>Varnish 経由。</p>
+<pre>
+$ ab -n 1000 -c 30 &quot;http://relax:6081/relax/_design/mytweets/_view/by_date?limit=10&amp;descending=true&quot;
+
+Concurrency Level:      30
+Time taken for tests:   10.043 seconds
+Complete requests:      1000
+Failed requests:        0
+Write errors:           0
+Total transferred:      27377000 bytes
+HTML transferred:       27082000 bytes
+Requests per second:    99.57 &#91;#/sec] (mean)
+Time per request:       301.293 &#91;ms] (mean)
+Time per request:       10.043 &#91;ms] (mean, across all concurrent requests)
+Transfer rate:          2662.06 &#91;Kbytes/sec] received
+
+</pre>
+
+			<p>こちらも若干改善された感じ。全部メモリにのっちゃうのでそんな変わらないかなー、と思いきや。</p>
+			<h4> ab してみる (3)</h4>
+			<p>最後に、HTMLレンダリングのURIもやってみます。これは毎回<a class="keyword" href="http://d.hatena.ne.jp/keyword/JS">JS</a><a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%D7%A5%ED%A5%BB%A5%B9">プロセス</a>がCGI的に動くので、どうでしょう。</p>
+<pre>
+$ ab -n 1000 -c 30 &quot;http://relax:5984/relax/_design/mytweets/_list/timeline/by_date?limit=10&amp;descending=true&quot;
+Concurrency Level:      30
+Time taken for tests:   40.317 seconds
+Complete requests:      1000
+Failed requests:        0
+Write errors:           0
+Total transferred:      7127000 bytes
+HTML transferred:       6942000 bytes
+Requests per second:    24.80 &#91;#/sec] (mean)
+Time per request:       1209.498 &#91;ms] (mean)
+</pre>
+
+			<p>割とがんばっている気がします。<a class="keyword" href="http://d.hatena.ne.jp/keyword/JS">JS</a>でHTMLをレンダリングするって結構重い処理なので。。。(pure <a class="keyword" href="http://d.hatena.ne.jp/keyword/JS">JS</a>実装のtemplate engineしかないもので。。。</p>
+			<p>Varnish版。</p>
+<pre>
+$ ab -n 1000 -c 30 &quot;http://relax:6081/relax/_design/mytweets/_list/timeline/by_date?Concurrency Level:      30
+Time taken for tests:   34.386 seconds
+Complete requests:      1000
+Failed requests:        0
+Write errors:           0
+Total transferred:      7217500 bytes
+HTML transferred:       6942000 bytes
+Requests per second:    29.08 &#91;#/sec] (mean)
+Time per request:       1031.594 &#91;ms] (mean)
+Time per request:       34.386 &#91;ms] (mean, across all concurrent requests)
+Transfer rate:          204.97 &#91;Kbytes/sec] received
+</pre>
+
+			<p>あんまりかわらなくなっちゃいました。</p>
+			<h4> じゃあ、Varnish Cache を有効にしてみようか。</h4>
+			<p>vcl_recv で最後に lookup します。尚、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%AD%A5%E3%A5%C3%A5%B7%A5%E5">キャッシュ</a>は<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%C7%A5%D5%A5%A9%A5%EB%A5%C8">デフォルト</a>の1GB。</p>
+<pre>
+sub vcl_recv {
+    if (req.request != &quot;GET&quot; &amp;&amp; req.request != &quot;HEAD&quot;) {
+        return (pass);
+    }
+    set req.backend = couchdb;
+    return (lookup);
+}
+</pre>
+
+			<p>測定</p>
+<pre>
+$ ab -n 1000 -c 30 &quot;http://relax:6081/relax/_design/mytweets/_list/timeline/by_date?descending=true&quot;
+
+Concurrency Level:      30
+Time taken for tests:   1.673 seconds
+Complete requests:      1000
+Failed requests:        0
+Write errors:           0
+Total transferred:      196220832 bytes
+HTML transferred:       195932256 bytes
+Requests per second:    597.55 &#91;#/sec] (mean)
+Time per request:       50.205 &#91;ms] (mean)
+Time per request:       1.673 &#91;ms] (mean, across all concurrent requests)
+Transfer rate:          114504.36 &#91;Kbytes/sec] received
+</pre>
+
+			<p>20倍ぐらい高速になりました。 tweet 自体は cron で 10 分ごとにまとめてとってきてCouchDBにつっこんでいるので、そのタイミングで Varnish Cache を破棄させるもよし、 CouchDB の update notirifcation を使って Cache を破棄させるもよし。</p>
+			<p>なんかこの組み合わせはすばらしい気がする。</p>
+			<h4> もう少し気になること。</h4>
+			<p>master -&gt; slave 構成ですが、逆向きのincremental replicationも起動時に仕込んでおけば、POST, PUT もVarnishにくわせることができるんじゃないかと。</p>
+		</div>
+
+<!-- google_ad_section_end -->
+</div>
+
+
+
+  <div class="comment">
+    <div class="caption">
+      <a name="c" href="/yssk22/comment?date=20100731#c">コメントを書く</a>
+      
+    </div>
+
+    
+
+
+    
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<div class="day">
+<h2><a href="http://d.hatena.ne.jp/yssk22/20100524"><span class="date">2010-05-24</span></a></h2>
+
+<div class="body">
+
+<!-- google_ad_section_start -->
+
+		<div class="section">
+			<h3 class="title"><a href="/yssk22/20100524#1274715732" name="1274715732"> Futon が動きました。</a></h3>			<p class="sectionheader"><span class="sectioncategory"><a href="/yssk22/searchdiary?word=%2A%5BCouchDB%5D" class="sectioncategory">CouchDB</a>, <a href="/yssk22/searchdiary?word=%2A%5BGAE%5D" class="sectioncategory">GAE</a></span> |  <span class="timestamp">00:42</span> |  <a href="http://b.hatena.ne.jp/entry/http://d.hatena.ne.jp/yssk22/20100524%231274715732" class="bookmark-icon"><img src="http://d.hatena.ne.jp/images/b_entry_lb.gif" border="0" title=" Futon が動きました。 - Web屋の人の日記 || WebJourney 開発ログ を含むブックマーク" alt=" Futon が動きました。 - Web屋の人の日記 || WebJourney 開発ログ を含むブックマーク" width="16" height="12" class="icon"></a> <a href="http://b.hatena.ne.jp/entry/http://d.hatena.ne.jp/yssk22/20100524%231274715732" class="bookmark-count"><img src="http://b.hatena.ne.jp/entry/image/http://d.hatena.ne.jp/yssk22/20100524%231274715732" title="はてなブックマーク -  Futon が動きました。 - Web屋の人の日記 || WebJourney 開発ログ " alt=""></a></p>
+			<p>といってもトップページ+そこからDBを作成するところだけですが。</p>
+			<p><a href="http://f.hatena.ne.jp/yssk22/20100525004016" class="hatena-fotolife" target="_blank"><img src="http://f.hatena.ne.jp/images/fotolife/y/yssk22/20100525/20100525004016.png" alt="f:id:yssk22:20100525004016p:image" title="f:id:yssk22:20100525004016p:image" class="hatena-fotolife"></a></p>
+			<p>ディスクサイズとかは正直どうやって計算すればいいのかわからないので、後で考えます。update_seq とかdoc countとかはジョブを動かして Eventually Consistency な感じであわせる方向で。</p>
+			<p><a href="http://dev-gaecouch.appspot.com/_utils/index.html" target="_blank">http://dev-gaecouch.appspot.com/_utils/index.html</a> に<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%AF%A5%BB%A5%B9">アクセス</a>すればいいのですが _session APIをまだ実装していないのでalertがでることはでます。</p>
+			<p>ところで、/_utils で<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%AF%A5%BB%A5%B9">アクセス</a>されたら /_utils/index.html を表示、とか Apache がやってくれそうなことをGAEで設定するにはどうしたらいいんですかね?</p>
+		</div>
+
+<!-- google_ad_section_end -->
+</div>
+
+
+
+  <div class="comment">
+    <div class="caption">
+      <a name="c" href="/yssk22/comment?date=20100524#c">コメントを書く</a>
+      
+    </div>
+
+    
+
+
+    
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<div class="day">
+<h2><a href="http://d.hatena.ne.jp/yssk22/20100523"><span class="date">2010-05-23</span></a></h2>
+
+<div class="body">
+
+<!-- google_ad_section_start -->
+
+		<div class="section">
+			<h3 class="title"><a href="/yssk22/20100523#1274612280" name="1274612280"> CouchDB Compatible API Service on GAE</a></h3>			<p class="sectionheader"><span class="sectioncategory"><a href="/yssk22/searchdiary?word=%2A%5BCouchDB%5D" class="sectioncategory">CouchDB</a>, <a href="/yssk22/searchdiary?word=%2A%5BGAE%5D" class="sectioncategory">GAE</a></span> |  <span class="timestamp">19:58</span> |  <a href="http://b.hatena.ne.jp/entry/http://d.hatena.ne.jp/yssk22/20100523%231274612280" class="bookmark-icon"><img src="http://d.hatena.ne.jp/images/b_entry_lb.gif" border="0" title=" CouchDB Compatible API Service on GAE - Web屋の人の日記 || WebJourney 開発ログ を含むブックマーク" alt=" CouchDB Compatible API Service on GAE - Web屋の人の日記 || WebJourney 開発ログ を含むブックマーク" width="16" height="12" class="icon"></a> <a href="http://b.hatena.ne.jp/entry/http://d.hatena.ne.jp/yssk22/20100523%231274612280" class="bookmark-count"><img src="http://b.hatena.ne.jp/entry/image/http://d.hatena.ne.jp/yssk22/20100523%231274612280" title="はてなブックマーク -  CouchDB Compatible API Service on GAE - Web屋の人の日記 || WebJourney 開発ログ " alt=""></a></p>
+			<p>元々の目的は、データモデルがいい加減だとスケールする環境でもスケールしなくなるよ！という話のつもりだったんですが。ソースコードを公開しつつチャレンジしていこうと思います。</p>
+			<p><a href="http://github.com/yssk22/gaecouch" target="_blank">http://github.com/yssk22/gaecouch</a></p>
+			<p>今できることは README.md に書いてあるとおりで、データベース操作とドキュメント操作が行えます。</p>
+			<p>データモデルについて。</p>
+			<p>データベース全体を表現するために(CouchDBでは1ファイル)、Database(db.Model) というクラスを定義しています。これは簡単ですね。</p>
+			<p>次に、データベースに放り込むドキュメントを表現するために、Document(db.Model) というクラスを定義します。</p>
+			<p>しかしここで問題が。Document は id で一意に特定できるのはインターフェース上であって、内部的には _id と _rev の組み合わせが一意キーとなります。 そして、_id ごとに 1-XXX, 2-YYY, 3-ZZZ, ... というリビジョングループを持つので、_rev に関してはCAS操作が必要になります。</p>
+			<p>ということで、DocumentRoot(db.Model) というコントロール用モデルを作って、このモデルの中で最新のドキュメントへのポインタを保持するようにしました。そして、_idごとに DocumentRoot と Document をエンティティグループとしてまとめてあげれば、CAS操作のトランザクションもある程度のスケーラビリティが担保できるんじゃないかなぁ、</p>
+			<p>ところでGAEのマニュアルによれば、エンティティグループはおなじデータノードに保持します、とありますから、これって結局、_id で分散している、ってことですよね。</p>
+			<p>ここで犠牲になったのは、Database の update_seq, doc_count, doc_del_count。 まぁこれは、Eventual Consistency ということで、担保できればいいのかな、とか。</p>
+			<p>最終的な答え合わせはCouchDBのソースコードを見ながらやろうとは思いますが、とりあえず振る舞いだけを手がかりに、CouchDBを他のスケールするといわれているシステム上で実装しようとすると、いろんな考察ができておもしろいですね。</p>
+			<p>ちなみに、まだ全然実装していないので、実装されていないAPIを呼び出すと HTTP 501 NotImplemented が返ってきます。</p>
+<pre class="syntax-highlight">
+imac:gaecouch yssk22$ curl <span class="synSpecial">-v</span> <span class="synSpecial">-X</span> GET http://gaecouch.appspot.com/_stats
+...
+<span class="synStatement">&lt;</span> HTTP/<span class="synConstant">1</span>.<span class="synConstant">1</span> <span class="synConstant">501</span> Not Implemented
+<span class="synStatement">&lt;</span> Cache-Control: no-cache
+<span class="synStatement">&lt;</span> Content-Type: text/plain<span class="synStatement">;</span> <span class="synIdentifier">charset</span>=utf<span class="synConstant">-8</span>
+<span class="synStatement">&lt;</span> Expires: Fri, <span class="synConstant">01</span> Jan <span class="synConstant">1990</span> <span class="synConstant">00</span>:<span class="synConstant">00</span>:<span class="synConstant">00</span> GMT
+<span class="synStatement">&lt;</span> Date: Sun, <span class="synConstant">23</span> May <span class="synConstant">2010</span> <span class="synConstant">10</span>:<span class="synConstant">56</span>:<span class="synConstant">58</span> GMT
+<span class="synStatement">&lt;</span> Server: Google Frontend
+<span class="synStatement">&lt;</span> Transfer-Encoding: chunked
+<span class="synStatement">&lt;</span> 
+<span class="synSpecial">{</span><span class="synStatement">&quot;</span><span class="synConstant">reason</span><span class="synStatement">&quot;</span>: <span class="synStatement">&quot;</span><span class="synConstant">please contribute implementation.</span><span class="synStatement">&quot;</span>, <span class="synStatement">&quot;</span><span class="synConstant">error</span><span class="synStatement">&quot;</span>: <span class="synStatement">&quot;</span><span class="synConstant">not_implemented</span><span class="synStatement">&quot;</span><span class="synSpecial">}</span>
+</pre>
+
+		</div>
+
+<!-- google_ad_section_end -->
+</div>
+
+
+
+  <div class="comment">
+    <div class="caption">
+      <a name="c" href="/yssk22/comment?date=20100523#c">コメントを書く</a>
+      
+    </div>
+
+    
+
+
+    
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<div class="day">
+<h2><a href="http://d.hatena.ne.jp/yssk22/20100522"><span class="date">2010-05-22</span></a> <span class="title">gaecouch.appspot.com</span></h2>
+
+<div class="body">
+
+<!-- google_ad_section_start -->
+
+		<div class="section">
+			<h3 class="title"><a href="/yssk22/20100522#1274548046" name="1274548046"> これはなんだ?</a></h3>			<p class="sectionheader"><span class="sectioncategory"><a href="/yssk22/searchdiary?word=%2A%5BCouchDB%5D" class="sectioncategory">CouchDB</a></span> |  <span class="timestamp">02:07</span> |  <a href="http://b.hatena.ne.jp/entry/http://d.hatena.ne.jp/yssk22/20100522%231274548046" class="bookmark-icon"><img src="http://d.hatena.ne.jp/images/b_entry_lb.gif" border="0" title=" これはなんだ? - Web屋の人の日記 || WebJourney 開発ログ を含むブックマーク" alt=" これはなんだ? - Web屋の人の日記 || WebJourney 開発ログ を含むブックマーク" width="16" height="12" class="icon"></a> <a href="http://b.hatena.ne.jp/entry/http://d.hatena.ne.jp/yssk22/20100522%231274548046" class="bookmark-count"><img src="http://b.hatena.ne.jp/entry/image/http://d.hatena.ne.jp/yssk22/20100522%231274548046" title="はてなブックマーク -  これはなんだ? - Web屋の人の日記 || WebJourney 開発ログ " alt=""></a></p>
+
+<pre class="syntax-highlight">
+imac:gaecouch yssk22$ curl <span class="synSpecial">-X</span> GET http://gaecouch.appspot.com/
+<span class="synSpecial">{</span><span class="synStatement">&quot;</span><span class="synConstant">not_found</span><span class="synStatement">&quot;</span>: <span class="synStatement">&quot;</span><span class="synConstant">Welcome</span><span class="synStatement">&quot;</span>, <span class="synStatement">&quot;</span><span class="synConstant">version</span><span class="synStatement">&quot;</span>: <span class="synStatement">&quot;</span><span class="synConstant">0.11.0</span><span class="synStatement">&quot;</span><span class="synSpecial">}</span>
+
+imac:gaecouch yssk22$ curl <span class="synSpecial">-X</span> GET http://gaecouch.appspot.com/a
+<span class="synSpecial">{</span><span class="synStatement">&quot;</span><span class="synConstant">reason</span><span class="synStatement">&quot;</span>: <span class="synStatement">&quot;</span><span class="synConstant">not_found</span><span class="synStatement">&quot;</span>, <span class="synStatement">&quot;</span><span class="synConstant">error</span><span class="synStatement">&quot;</span>: <span class="synStatement">&quot;</span><span class="synConstant">no_db_file</span><span class="synStatement">&quot;</span><span class="synSpecial">}</span>
+
+imac:gaecouch yssk22$ curl <span class="synSpecial">-X</span> PUT <span class="synSpecial">--data</span> <span class="synStatement">''</span> http://gaecouch.appspot.com/a
+<span class="synSpecial">{</span><span class="synStatement">&quot;</span><span class="synConstant">ok</span><span class="synStatement">&quot;</span>: <span class="synStatement">true</span><span class="synSpecial">}</span>
+
+imac:gaecouch yssk22$ curl <span class="synSpecial">-X</span> GET http://gaecouch.appspot.com/a
+<span class="synSpecial">{</span><span class="synStatement">&quot;</span><span class="synConstant">update_seq</span><span class="synStatement">&quot;</span>: <span class="synConstant">0</span>, <span class="synStatement">&quot;</span><span class="synConstant">purge_seq</span><span class="synStatement">&quot;</span>: <span class="synConstant">0</span>, <span class="synStatement">&quot;</span><span class="synConstant">doc_count</span><span class="synStatement">&quot;</span>: <span class="synConstant">0</span>, <span class="synStatement">&quot;</span><span class="synConstant">compact_running</span><span class="synStatement">&quot;</span>: <span class="synStatement">false</span>, <span class="synStatement">&quot;</span><span class="synConstant">db_name</span><span class="synStatement">&quot;</span>: <span class="synStatement">&quot;</span><span class="synConstant">a</span><span class="synStatement">&quot;</span>, <span class="synStatement">&quot;</span><span class="synConstant">disk_format_version</span><span class="synStatement">&quot;</span>: <span class="synConstant">5</span>, <span class="synStatement">&quot;</span><span class="synConstant">instance_start_time</span><span class="synStatement">&quot;</span>: <span class="synConstant">1274547941</span>.<span class="synConstant">0</span>, <span class="synStatement">&quot;</span><span class="synConstant">doc_del_count</span><span class="synStatement">&quot;</span>: <span class="synConstant">0</span><span class="synSpecial">}</span>
+
+imac:gaecouch yssk22$ curl <span class="synSpecial">-X</span> DELETE http://gaecouch.appspot.com/a
+<span class="synSpecial">{</span><span class="synStatement">&quot;</span><span class="synConstant">ok</span><span class="synStatement">&quot;</span>: <span class="synStatement">true</span><span class="synSpecial">}</span>
+
+imac:gaecouch yssk22$ curl <span class="synSpecial">-X</span> DELETE http://gaecouch.appspot.com/a
+<span class="synSpecial">{</span><span class="synStatement">&quot;</span><span class="synConstant">reason</span><span class="synStatement">&quot;</span>: <span class="synStatement">&quot;</span><span class="synConstant">not_found</span><span class="synStatement">&quot;</span>, <span class="synStatement">&quot;</span><span class="synConstant">error</span><span class="synStatement">&quot;</span>: <span class="synStatement">&quot;</span><span class="synConstant">missing</span><span class="synStatement">&quot;</span><span class="synSpecial">}</span>
+
+</pre>
+			<p>GAEで遊んでみました。ひとまずここまで。続きをやるかどうかはわかりません！</p>
+		</div>
+
+<!-- google_ad_section_end -->
+</div>
+
+
+
+  <div class="comment">
+    <div class="caption">
+      <a name="c" href="/yssk22/comment?date=20100522#c">コメントを書く</a>
+      
+    </div>
+
+    
+
+
+    
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+</div>
+<div class="calendar" id="pager-bottom">
+  <a rel="prev" href="/yssk22/?of=5" class="prev">&lt;前の5日分</a>&nbsp;
+</div>
+
+</div>
+
+
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(
+  ['_setAccount', 'UA-441387-31'],
+  ['_trackPageview'],
+  ['b._setAccount', 'UA-7855606-1'],
+  ['b._setDomainName', '.hatena.ne.jp'],
+  ['b._trackPageview']
+  
+  );
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+   "name" : "extractcontent"
+,  "version" : "0.1.0"
+,  "description" : "Utility for extracting title and main contents from an HTML text."
+,  "tags" : ["text-analysis", "node", "utility"]
+,  "author" : "Yohei Sasaki <yssk22@gmail.com>"
+,  "repository" : 
+   {  "type" : "git"
+   ,  "url" : "http://github.com/yssk22/extractcontent.git"
+   }
+, "bugs" : { "web" : "http://github.com/yssk22/extractcontent/issues" }
+, "licenses" :
+  [ { "type" : "MIT"
+    , "url" : "http://github.com/yssk22/extractcontent/raw/master/LICENSE"
+    }
+  ]
+, "main" : "./lib/extractcontent"
+
+}
