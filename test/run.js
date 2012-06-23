@@ -1,4 +1,4 @@
-var sys = require('sys'),
+var util = require('util'),
     path = require('path');
 
 var libdir = path.join(__dirname, '../lib');
