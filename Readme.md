@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/yssk22/extractcontent.png)](http://travis-ci.org/yssk22/extractcontent)
 
 # extractcontent
 
